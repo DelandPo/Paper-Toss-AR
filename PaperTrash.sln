@@ -1,12 +1,24 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaperTrash", "PaperTrash.csproj", "{D8FE3E9E-91F7-4BB4-D53D-E38B7112D3EA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaperTrash.Editor", "PaperTrash.Editor.csproj", "{B524A341-181D-2648-ADD6-AF8025904E56}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D8FE3E9E-91F7-4BB4-D53D-E38B7112D3EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8FE3E9E-91F7-4BB4-D53D-E38B7112D3EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8FE3E9E-91F7-4BB4-D53D-E38B7112D3EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8FE3E9E-91F7-4BB4-D53D-E38B7112D3EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B524A341-181D-2648-ADD6-AF8025904E56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B524A341-181D-2648-ADD6-AF8025904E56}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B524A341-181D-2648-ADD6-AF8025904E56}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B524A341-181D-2648-ADD6-AF8025904E56}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
