@@ -13,27 +13,27 @@
     </member>
     <member name="P:UnityEngine.SpatialTracking.TrackedPoseDriver.deviceType">
       <summary>
-        <para>the device being tracked by the tracked pose driver</para>
+        <para>The device being tracked by the tracked pose driver</para>
       </summary>
     </member>
     <member name="P:UnityEngine.SpatialTracking.TrackedPoseDriver.poseSource">
       <summary>
-        <para>the pose being tracked by the tracked pose driver</para>
+        <para>The pose being tracked by the tracked pose driver</para>
       </summary>
     </member>
     <member name="P:UnityEngine.SpatialTracking.TrackedPoseDriver.trackingType">
       <summary>
-        <para>the tracking type being used by the tracked pose driver</para>
+        <para>The tracking type being used by the tracked pose driver</para>
       </summary>
     </member>
     <member name="P:UnityEngine.SpatialTracking.TrackedPoseDriver.updateType">
       <summary>
-        <para>the update type being used by the tracked pose driver</para>
+        <para>The update type being used by the tracked pose driver</para>
       </summary>
     </member>
     <member name="T:UnityEngine.SpatialTracking.TrackedPoseDriver.DeviceType">
       <summary>
-        <para>This is used to indiciate what type of device the Tracked Pose Driver is currently tracking</para>
+        <para>This is used to indicate what type of device the Tracked Pose Driver is currently tracking</para>
       </summary>
     </member>
     <member name="F:UnityEngine.SpatialTracking.TrackedPoseDriver.DeviceType.GenericXRController">
@@ -60,7 +60,7 @@
     </member>
     <member name="T:UnityEngine.SpatialTracking.TrackedPoseDriver.TrackedPose">
       <summary>
-        <para>This is used to indiciate which pose the Tracked Pose Driver is currently tracking</para>
+        <para>This is used to indicate which pose the Tracked Pose Driver is currently tracking</para>
       </summary>
     </member>
     <member name="F:UnityEngine.SpatialTracking.TrackedPoseDriver.TrackedPose.Center">
@@ -105,22 +105,22 @@
     </member>
     <member name="F:UnityEngine.SpatialTracking.TrackedPoseDriver.TrackingType.PositionOnly">
       <summary>
-        <para>With this setting, only position will be applied</para>
+        <para>With this setting, only the pose's position will be applied to the parent transform</para>
       </summary>
     </member>
     <member name="F:UnityEngine.SpatialTracking.TrackedPoseDriver.TrackingType.RotationAndPosition">
       <summary>
-        <para>With this setting, both rotation and position will be applied</para>
+        <para>With this setting, both the pose's rotation and position will be applied to the parent transform</para>
       </summary>
     </member>
     <member name="F:UnityEngine.SpatialTracking.TrackedPoseDriver.TrackingType.RotationOnly">
       <summary>
-        <para>With this setting, only rotation will be applied</para>
+        <para>With this setting, only the pose's rotation will be applied to the parent transform</para>
       </summary>
     </member>
     <member name="T:UnityEngine.SpatialTracking.TrackedPoseDriver.UpdateType">
       <summary>
-        <para>This is used to indiciate what points in the frame the tracked pose driver will sample input</para>
+        <para>This is used to indicate what points in the frame the tracked pose driver will sample input</para>
       </summary>
     </member>
     <member name="F:UnityEngine.SpatialTracking.TrackedPoseDriver.UpdateType.BeforeRender">
@@ -135,7 +135,7 @@
     </member>
     <member name="F:UnityEngine.SpatialTracking.TrackedPoseDriver.UpdateType.UpdateAndBeforeRender">
       <summary>
-        <para>With this setting, the tracked pose driver will sample at both update, and directly before render</para>
+        <para>Sample input at both update, and directly before rendering. For smooth head pose tracking, we recommend using this value as it will provide the lowest input latency for the device. This is the default value for the UpdateType option</para>
       </summary>
     </member>
     <member name="P:UnityEngine.SpatialTracking.TrackedPoseDriver.UseRelativeTransform">

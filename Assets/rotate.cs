@@ -7,7 +7,7 @@ public class rotate : MonoBehaviour
     private GameObject colaCan;
     public Camera firstPersonCamera;
     private bool shootEnable = false;
-    public float timeLeft = 3;
+    public float timeLeft = 1.5f;
     public GameObject Can;
     public float forceApplied = 5;
     Rigidbody rb;
@@ -47,14 +47,14 @@ public class rotate : MonoBehaviour
             //if(Physics.Raycast(ray,out myHit, Mathf.Infinity))
             if(true)
                {
-                timeLeft = 3;
+                timeLeft = 1.5f;
                        
                // print(myHit.point);
                 //print(myHit.point.y + 20);
 
                 //colaCan = Instantiate(Can,new Vector3(myHit.point.x ,myHit.point.y+25,myHit.point.z), Quaternion.identity);
                 colaCan = Instantiate(Can,marksPoint, Quaternion.identity);
-                colaCan.transform.position = colaCan.transform.position - firstPersonCamera.transform.forward * 5;
+                colaCan.transform.position = colaCan.transform.position + firstPersonCamera.transform.forward * 10;
                 colaCan.AddComponent<Rigidbody>();
                 colaCan.AddComponent<BoxCollider>();
                 colaCan.AddComponent<destroyAfterCertainSeconds>();

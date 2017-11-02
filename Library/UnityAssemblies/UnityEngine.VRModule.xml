@@ -897,14 +897,14 @@
     </member>
     <member name="P:UnityEngine.XR.WSA.Input.InteractionSourcePose.positionAccuracy">
       <summary>
-        <para>Returns the accuracy of tracking on the interaction source.</para>
+        <para>The position-tracking accuracy of the interaction source.</para>
       </summary>
     </member>
     <member name="M:UnityEngine.XR.WSA.Input.InteractionSourcePose.TryGetAngularVelocity(UnityEngine.Vector3&amp;)">
       <summary>
         <para>Attempts to retrieve a Vector3 representing the current angular velocity of the tracked node.</para>
       </summary>
-      <param name="angularVelocity"></param>
+      <param name="angularVelocity">If the function returns true, this will be filled out with the angular velocity of the interaction source. If the function returns false, the value filled out should not be used.</param>
       <returns>
         <para>True if the angular velocity was set in the output parameter. False if the angular velocity is not available due to limitations of the underlying platform or if the node is not presently tracked.</para>
       </returns>
@@ -971,6 +971,21 @@
     <member name="T:UnityEngine.XR.WSA.Input.InteractionSourcePositionAccuracy">
       <summary>
         <para>Denotes the accuracy of tracking on the interaction source.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.WSA.Input.InteractionSourcePositionAccuracy.Approximate">
+      <summary>
+        <para>A position accuracy of Approximate reports that you may not want to fully trust the positions reported, as the position is inferred or synthesized in some way, such as the controller leaving the sensors' field of view and forcing the API to rely on the device's IMU instead of visual tracking.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.WSA.Input.InteractionSourcePositionAccuracy.High">
+      <summary>
+        <para>A position accuracy of High reports that you can fully trust the position, as the interaction source is within the sensors' visual field of view.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.XR.WSA.Input.InteractionSourcePositionAccuracy.None">
+      <summary>
+        <para>A position accuracy of None reports that there is no position accuracy, as the interaction source unlocatable.</para>
       </summary>
     </member>
     <member name="T:UnityEngine.XR.WSA.Input.InteractionSourcePressedEventArgs">

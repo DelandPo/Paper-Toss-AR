@@ -18726,6 +18726,20 @@ GUILayout.MaxHeight, GUILayout.ExpandWidth, GUILayout.ExpandHeight.</param>
         <para>Called when the Editor is woken up.</para>
       </summary>
     </member>
+    <member name="M:UnityEditor.MaterialEditor.BeginAnimatedCheck(UnityEngine.Rect,UnityEditor.MaterialProperty)">
+      <summary>
+        <para>Create a Property wrapper, useful for making regular GUI controls work with MaterialProperty.</para>
+      </summary>
+      <param name="totalPosition">Rectangle on the screen to use for the control, including label if applicable.</param>
+      <param name="prop">The MaterialProperty to use for the control.</param>
+    </member>
+    <member name="M:UnityEditor.MaterialEditor.BeginAnimatedCheck(UnityEditor.MaterialProperty)">
+      <summary>
+        <para>Create a Property wrapper, useful for making regular GUI controls work with MaterialProperty.</para>
+      </summary>
+      <param name="totalPosition">Rectangle on the screen to use for the control, including label if applicable.</param>
+      <param name="prop">The MaterialProperty to use for the control.</param>
+    </member>
     <member name="M:UnityEditor.MaterialEditor.ColorProperty(UnityEngine.Rect,UnityEditor.MaterialProperty,System.String)">
       <summary>
         <para>Draw a property field for a color shader property.</para>
@@ -18798,6 +18812,11 @@ Returns true if the UI is indeed displayed i.e. the material supports the Double
         <para>Display UI for editing material's render queue setting within the specified rect.</para>
       </summary>
       <param name="r"></param>
+    </member>
+    <member name="M:UnityEditor.MaterialEditor.EndAnimatedCheck">
+      <summary>
+        <para>Ends a Property wrapper started with BeginAnimatedCheck.</para>
+      </summary>
     </member>
     <member name="M:UnityEditor.MaterialEditor.FixupEmissiveFlag(UnityEngine.Color,UnityEngine.MaterialGlobalIlluminationFlags)">
       <summary>
@@ -21024,346 +21043,6 @@ If the target name is in the provided list of existing names, a unique name is g
       <summary>
         <para>Called to Reset the target before iterating through them.</para>
       </summary>
-    </member>
-    <member name="T:UnityEditor.PackageManager.Client">
-      <summary>
-        <para>Package manager client class.</para>
-      </summary>
-    </member>
-    <member name="M:UnityEditor.PackageManager.Client.Add(System.Int64&amp;,System.String)">
-      <summary>
-        <para>Add a package dependency to the project.</para>
-      </summary>
-      <param name="operationId">ID of the add operation.</param>
-      <param name="packageId">ID of the package to add.</param>
-      <returns>
-        <para>Status of the add operation.</para>
-      </returns>
-    </member>
-    <member name="M:UnityEditor.PackageManager.Client.#ctor">
-      <summary>
-        <para>Create a new package manager client.</para>
-      </summary>
-    </member>
-    <member name="M:UnityEditor.PackageManager.Client.GetAddOperationData(System.Int64)">
-      <summary>
-        <para>Get information about the status of a Add operation.</para>
-      </summary>
-      <param name="operationId">The ID of the search operation.</param>
-      <returns>
-        <para>The structure containing the package information on the added package.</para>
-      </returns>
-    </member>
-    <member name="M:UnityEditor.PackageManager.Client.GetListOperationData(System.Int64)">
-      <summary>
-        <para>Get the operation data of the list operation.</para>
-      </summary>
-      <param name="operationId"></param>
-    </member>
-    <member name="M:UnityEditor.PackageManager.Client.GetOperationError(System.Int64)">
-      <summary>
-        <para>Returns the operation's error.</para>
-      </summary>
-      <param name="operationId"></param>
-    </member>
-    <member name="M:UnityEditor.PackageManager.Client.GetOperationStatus(System.Int64)">
-      <summary>
-        <para>Get information about the status of a given operation.</para>
-      </summary>
-      <param name="operationId">The ID of the operation.</param>
-      <returns>
-        <para>The structure containing the information about the status of a given operation.</para>
-      </returns>
-    </member>
-    <member name="M:UnityEditor.PackageManager.Client.GetOutdatedOperationData(System.Int64)">
-      <summary>
-        <para>Get information about the status of a Outdated operation.</para>
-      </summary>
-      <param name="operationId">The ID of the operation.</param>
-      <returns>
-        <para>Map of outdated packages. The key is the package name and the value is a stucture pointing to the current and latest package details.</para>
-      </returns>
-    </member>
-    <member name="M:UnityEditor.PackageManager.Client.GetRemoveOperationData(System.Int64)">
-      <summary>
-        <para>Get information about the status of a Remove operation.</para>
-      </summary>
-      <param name="operationId">The ID of the operation.</param>
-      <returns>
-        <para>A string containing the  information about the status of the operation.</para>
-      </returns>
-    </member>
-    <member name="M:UnityEditor.PackageManager.Client.GetSearchOperationData(System.Int64)">
-      <summary>
-        <para>Returns information about the status of a Search operation.</para>
-      </summary>
-      <param name="operationId">The ID of the operation.</param>
-      <returns>
-        <para>An array containing package information structures on the searched package.</para>
-      </returns>
-    </member>
-    <member name="M:UnityEditor.PackageManager.Client.List(System.Int64&amp;)">
-      <summary>
-        <para>Retrieve the list of the packages the project depends on, read-only and internalized.</para>
-      </summary>
-      <param name="operationId">The ID of the list operation.</param>
-      <returns>
-        <para>The status of the list operation.</para>
-      </returns>
-    </member>
-    <member name="M:UnityEditor.PackageManager.Client.Outdated(System.Int64&amp;)">
-      <summary>
-        <para>List all the packages in the project that have a new compatible version available.</para>
-      </summary>
-      <param name="operationId">The ID of the outdated operation.</param>
-      <returns>
-        <para>The status of the outdated operation.</para>
-      </returns>
-    </member>
-    <member name="M:UnityEditor.PackageManager.Client.Remove(System.Int64&amp;,System.String)">
-      <summary>
-        <para>Remove a previously added package from the project.</para>
-      </summary>
-      <param name="operationId">The ID of the remove operation.</param>
-      <param name="packageId">The package to remove.</param>
-      <returns>
-        <para>The status of the remove operation.</para>
-      </returns>
-    </member>
-    <member name="M:UnityEditor.PackageManager.Client.Resolve(System.Int64&amp;)">
-      <summary>
-        <para>Enumerate all packages from the project's packages dependency tree, download missing ones and mount them into the asset database.</para>
-      </summary>
-      <param name="operationId">The ID of the resolve operation.</param>
-      <returns>
-        <para>The status of the operation.</para>
-      </returns>
-    </member>
-    <member name="M:UnityEditor.PackageManager.Client.Search(System.Int64&amp;,System.String)">
-      <summary>
-        <para>Search the registry for available version of the given package.</para>
-      </summary>
-      <param name="operationId">The ID of the search operation.</param>
-      <param name="packageName">The ID of the package.</param>
-      <returns>
-        <para>The status of the search operation.</para>
-      </returns>
-    </member>
-    <member name="T:UnityEditor.PackageManager.Error">
-      <summary>
-        <para>Structure describing the error of a package operation.</para>
-      </summary>
-    </member>
-    <member name="P:UnityEditor.PackageManager.Error.errorCode">
-      <summary>
-        <para>The error code associated to the error.</para>
-      </summary>
-    </member>
-    <member name="P:UnityEditor.PackageManager.Error.message">
-      <summary>
-        <para>Message associated to the error.</para>
-      </summary>
-    </member>
-    <member name="T:UnityEditor.PackageManager.ErrorCode">
-      <summary>
-        <para>Package operation Error.</para>
-      </summary>
-    </member>
-    <member name="F:UnityEditor.PackageManager.ErrorCode.Forbidden">
-      <summary>
-        <para>Package Manager operation was not allowed.</para>
-      </summary>
-    </member>
-    <member name="F:UnityEditor.PackageManager.ErrorCode.InvalidParameter">
-      <summary>
-        <para>Package manager operation had wrong paramaters.</para>
-      </summary>
-    </member>
-    <member name="F:UnityEditor.PackageManager.ErrorCode.NotFound">
-      <summary>
-        <para>Package manager operation was not found.</para>
-      </summary>
-    </member>
-    <member name="F:UnityEditor.PackageManager.ErrorCode.Success">
-      <summary>
-        <para>Package manager operation succeeded.</para>
-      </summary>
-    </member>
-    <member name="F:UnityEditor.PackageManager.ErrorCode.Unknown">
-      <summary>
-        <para>Package manager operation had an unknown error.</para>
-      </summary>
-    </member>
-    <member name="T:UnityEditor.PackageManager.OperationStatus">
-      <summary>
-        <para>Structure describing the state of a package operation.</para>
-      </summary>
-    </member>
-    <member name="P:UnityEditor.PackageManager.OperationStatus.id">
-      <summary>
-        <para>ID of the operation.</para>
-      </summary>
-    </member>
-    <member name="P:UnityEditor.PackageManager.OperationStatus.packageList">
-      <summary>
-        <para>Resulting package list.</para>
-      </summary>
-    </member>
-    <member name="P:UnityEditor.PackageManager.OperationStatus.progress">
-      <summary>
-        <para>Completion percentage of the operation.</para>
-      </summary>
-    </member>
-    <member name="P:UnityEditor.PackageManager.OperationStatus.status">
-      <summary>
-        <para>Status of the operation.</para>
-      </summary>
-    </member>
-    <member name="P:UnityEditor.PackageManager.OperationStatus.type">
-      <summary>
-        <para>String describing the type of the operation.</para>
-      </summary>
-    </member>
-    <member name="T:UnityEditor.PackageManager.OriginType">
-      <summary>
-        <para>Type of origin path for packages.</para>
-      </summary>
-    </member>
-    <member name="F:UnityEditor.PackageManager.OriginType.Path">
-      <summary>
-        <para>The value is the file system path or a gzip containing the package.</para>
-      </summary>
-    </member>
-    <member name="F:UnityEditor.PackageManager.OriginType.Registry">
-      <summary>
-        <para>The value is the url of a registry.</para>
-      </summary>
-    </member>
-    <member name="F:UnityEditor.PackageManager.OriginType.Unknown">
-      <summary>
-        <para>The type of the value is unknown.</para>
-      </summary>
-    </member>
-    <member name="F:UnityEditor.PackageManager.OriginType.Url">
-      <summary>
-        <para>The value is the url of a folder or a gzip containing the package.</para>
-      </summary>
-    </member>
-    <member name="T:UnityEditor.PackageManager.OutdatedPackage">
-      <summary>
-        <para>Structure holding information on an outdated package.</para>
-      </summary>
-    </member>
-    <member name="P:UnityEditor.PackageManager.OutdatedPackage.current">
-      <summary>
-        <para>Information on the package version currenlty in the project.</para>
-      </summary>
-    </member>
-    <member name="P:UnityEditor.PackageManager.OutdatedPackage.latest">
-      <summary>
-        <para>Information on the most recent available compatible version for the package.</para>
-      </summary>
-    </member>
-    <member name="T:UnityEditor.PackageManager.RelationType">
-      <summary>
-        <para>Type of package relation to a project.</para>
-      </summary>
-    </member>
-    <member name="F:UnityEditor.PackageManager.RelationType.Excluded">
-      <summary>
-        <para>Denote a package excluded from the project.</para>
-      </summary>
-    </member>
-    <member name="F:UnityEditor.PackageManager.RelationType.Internalized">
-      <summary>
-        <para>Denote a package internalized in the project.</para>
-      </summary>
-    </member>
-    <member name="F:UnityEditor.PackageManager.RelationType.ReadOnly">
-      <summary>
-        <para>Denote a  package referenced by the project as provided by the registry.</para>
-      </summary>
-    </member>
-    <member name="F:UnityEditor.PackageManager.RelationType.Unknown">
-      <summary>
-        <para>Unknown relation type.</para>
-      </summary>
-    </member>
-    <member name="T:UnityEditor.PackageManager.StatusCode">
-      <summary>
-        <para>Package operation status.</para>
-      </summary>
-    </member>
-    <member name="F:UnityEditor.PackageManager.StatusCode.Done">
-      <summary>
-        <para>Package manager operation compeleted.</para>
-      </summary>
-    </member>
-    <member name="F:UnityEditor.PackageManager.StatusCode.Error">
-      <summary>
-        <para>Package manager operation failed.</para>
-      </summary>
-    </member>
-    <member name="F:UnityEditor.PackageManager.StatusCode.InProgress">
-      <summary>
-        <para>Package manager operation is in progress.</para>
-      </summary>
-    </member>
-    <member name="F:UnityEditor.PackageManager.StatusCode.InQueue">
-      <summary>
-        <para>Package manager operation is queued.</para>
-      </summary>
-    </member>
-    <member name="F:UnityEditor.PackageManager.StatusCode.NotFound">
-      <summary>
-        <para>Package manager operation failed because it referred a package that could not be found.</para>
-      </summary>
-    </member>
-    <member name="T:UnityEditor.PackageManager.UpmPackageInfo">
-      <summary>
-        <para>Structure describing a Unity Package.</para>
-      </summary>
-    </member>
-    <member name="P:UnityEditor.PackageManager.UpmPackageInfo.originLocation">
-      <summary>
-        <para>Location of the source of the package.</para>
-      </summary>
-    </member>
-    <member name="P:UnityEditor.PackageManager.UpmPackageInfo.originType">
-      <summary>
-        <para>Type of the origin path specified in originLocation.</para>
-      </summary>
-    </member>
-    <member name="P:UnityEditor.PackageManager.UpmPackageInfo.packageId">
-      <summary>
-        <para>Identifier of the package.</para>
-      </summary>
-    </member>
-    <member name="P:UnityEditor.PackageManager.UpmPackageInfo.relationType">
-      <summary>
-        <para>The relation of the package with the current project.</para>
-      </summary>
-    </member>
-    <member name="P:UnityEditor.PackageManager.UpmPackageInfo.resolvedPath">
-      <summary>
-        <para>The local path of the project on disk.</para>
-      </summary>
-    </member>
-    <member name="P:UnityEditor.PackageManager.UpmPackageInfo.tag">
-      <summary>
-        <para>Tag associated with the expected package revision.</para>
-      </summary>
-    </member>
-    <member name="P:UnityEditor.PackageManager.UpmPackageInfo.version">
-      <summary>
-        <para>Version of the package.</para>
-      </summary>
-    </member>
-    <member name="M:UnityEditor.PackageManager.UpmPackageInfo.#ctor(System.String)">
-      <summary>
-        <para>Creates a new instance of UpmPackageInfo.</para>
-      </summary>
-      <param name="packageId">Identifier of the package.</param>
     </member>
     <member name="T:UnityEditor.PauseState">
       <summary>
