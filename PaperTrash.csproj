@@ -219,7 +219,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\collisionD.cs" />
     <Compile Include="Assets\gameManager.cs" />
+    <Compile Include="Assets\ObjectPuller.cs" />
     <Compile Include="Assets\rotate.cs" />
     <Compile Include="Assets\Vuforia\Scripts\BackgroundPlaneBehaviour.cs" />
     <Compile Include="Assets\Vuforia\Scripts\CloudRecoBehaviour.cs" />

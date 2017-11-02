@@ -5,10 +5,19 @@ public class rotate : MonoBehaviour
 
     // Use this for initialization
     public GameObject colaCan;
+    public Camera firstPersonCamera;
+    private bool firsttime = true;
+    Rigidbody rb;
 
     void Start()
     {
 
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        GameObject my = collision.contacts[0].thisCollider.gameObject;
+        Destroy(my);
     }
 
     // Update is called once per frame
@@ -18,8 +27,23 @@ public class rotate : MonoBehaviour
 
         if (Input.touchCount > 0)
         {
-            Instantiate(colaCan, new Vector3(0, 20, -30), Quaternion.identity);
+            RaycastHit myHit;
+            Touch myTouch = Input.GetTouch(0);
+            Ray ray = firstPersonCamera.ScreenPointToRay(myTouch.position);
+            if(Physics.Raycast(ray,out myHit, Mathf.Infinity))
+            if (firsttime)
+            {
 
+                colaCan = Instantiate(colaCan,myHit.point,Quaternion.identity);
+
+            }
+            colaCan.AddComponent<Rigidbody>();
+            colaCan.AddComponent<BoxCollider>();
+            
+            rb = colaCan.GetComponent<Rigidbody>();
+            rb.useGravity = true;
+            rb.isKinematic = false;
+            rb.AddForce(transform.forward * 1,ForceMode.Impulse);
         }
 
     }
