@@ -177,8 +177,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e074096325aa2de42a8e541849f215bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colaCan: {fileID: 1850537593684206, guid: 06f42d01065fa14418c0728e3793123e, type: 2}
   firstPersonCamera: {fileID: 1748333912}
+  Can: {fileID: 1705129010167144, guid: bfa7e8189ab181843b9ac106678a628a, type: 2}
 --- !u!1 &1088921151
 GameObject:
   m_ObjectHideFlags: 0
@@ -848,7 +848,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1865821032}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 476.5, y: 221.5, z: 0}
+  m_LocalPosition: {x: 609.5, y: 344, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2128630678}

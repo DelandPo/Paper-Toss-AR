@@ -4,9 +4,11 @@ public class rotate : MonoBehaviour
 {
 
     // Use this for initialization
-    public GameObject colaCan;
+    private GameObject colaCan;
     public Camera firstPersonCamera;
     private bool firsttime = true;
+    public float timeLeft = 5;
+    public GameObject Can;
     Rigidbody rb;
 
     void Start()
@@ -14,19 +16,20 @@ public class rotate : MonoBehaviour
 
     }
 
+    /*
     private void OnCollisionEnter(Collision collision)
     {
         GameObject my = collision.contacts[0].thisCollider.gameObject;
         Destroy(my);
     }
-
+    */
     // Update is called once per frame
     void Update()
     {
-
-
-        if (Input.touchCount > 0)
+        timeLeft -= Time.deltaTime;
+        if (Input.touchCount > 0 && timeLeft < 0)
         {
+            timeLeft = 5;
             RaycastHit myHit;
             Touch myTouch = Input.GetTouch(0);
             Ray ray = firstPersonCamera.ScreenPointToRay(myTouch.position);
@@ -34,16 +37,20 @@ public class rotate : MonoBehaviour
             if (firsttime)
             {
 
-                colaCan = Instantiate(colaCan,myHit.point,Quaternion.identity);
+                colaCan = Instantiate(Can,myHit.point,Quaternion.identity);
+                colaCan.AddComponent<Rigidbody>();
+                colaCan.AddComponent<BoxCollider>();
+                colaCan.AddComponent<destroyAfterCertainSeconds>();
 
-            }
-            colaCan.AddComponent<Rigidbody>();
-            colaCan.AddComponent<BoxCollider>();
+                rb = colaCan.GetComponent<Rigidbody>();
+                rb.useGravity = true;
+                rb.isKinematic = false;
+
+                rb.AddForce(transform.forward * 1, ForceMode.Impulse);
+
+                }
             
-            rb = colaCan.GetComponent<Rigidbody>();
-            rb.useGravity = true;
-            rb.isKinematic = false;
-            rb.AddForce(transform.forward * 1,ForceMode.Impulse);
+          
         }
 
     }
