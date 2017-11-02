@@ -178,6 +178,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firstPersonCamera: {fileID: 1748333912}
+  timeLeft: 5
   Can: {fileID: 1705129010167144, guid: bfa7e8189ab181843b9ac106678a628a, type: 2}
 --- !u!1 &1088921151
 GameObject:
@@ -848,7 +849,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1865821032}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 609.5, y: 344, z: 0}
+  m_LocalPosition: {x: 654, y: 216.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2128630678}
